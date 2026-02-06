@@ -76,7 +76,7 @@ img {
     display: block;
 }
 #hero_img {
-    max-width: 100%;
+    width: 100vw;
 }
 #promotion_inner {
     padding: 5rem;

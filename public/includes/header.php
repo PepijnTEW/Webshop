@@ -1,6 +1,3 @@
-<?php
-//hier komen standaart includes
-?>
 <!DOCTYPE html>
 <html lang="nl">
 <head>

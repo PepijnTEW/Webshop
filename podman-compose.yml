@@ -3,7 +3,7 @@ services:
   php:
     image: docker.io/wodby/php:latest
     volumes:
-      - "./public:/var/www/html:Z"
+      - "./public:/var/www/html:z"
     user: "${UID}:${GID}"
   # Nginx Service
   nginx:

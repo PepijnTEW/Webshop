@@ -1,6 +1,5 @@
 <?php
-$envPath = dirname(__DIR__) . '/.env';
-
+$envPath = __DIR__ . "/../.env";
 if (!is_readable($envPath)) {
     die("ENV file not found at $envPath");
 }
@@ -11,8 +10,8 @@ $mysqli = new mysqli(
     $env["DB_HOST"],
     $env["DB_USERNAME"],
     $env["DB_PASSWORD"],
-    $env["DB_NAME"]',
-    (int)($env["DB_PORT"])
+    $env["DB_NAME"],
+    (int) $env["DB_PORT"],
 );
 
 if ($mysqli->connect_errno) {

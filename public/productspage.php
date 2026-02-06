@@ -1,6 +1,7 @@
 <?php
 include "./includes/header.php";
 include "./includes/nav.php";
+require_once __DIR__ . "/config/products.php";
 ?>
 <main>
     <section class="section" id="shop">
@@ -9,33 +10,33 @@ include "./includes/nav.php";
             <div id="shop_content">
                 <div class="shop_item">
                     <img class="shop_item_img" src="./img/site/hero.jpg" alt="test">
-                    <p>Name</p>
-                    <p>Catogory</p>
-                    <p>Price</p>
+                    <p class="shop_item_title">Name</p>
+                    <p class="shop_item_description">Catogory</p>
+                    <p class="shop_item_price">Price</p>
                 </div>
                 <div class="shop_item">
                     <img class="shop_item_img" src="./img/site/hero.jpg" alt="test">
-                    <p>Name</p>
-                    <p>Catogory</p>
-                    <p>Price</p>
+                    <p class="shop_item_title">Name</p>
+                    <p class="shop_item_description">Catogory</p>
+                    <p class="shop_item_price">Price</p>
                 </div>
                 <div class="shop_item">
                     <img class="shop_item_img" src="./img/site/hero.jpg" alt="test">
-                    <p>Name</p>
-                    <p>Catogory</p>
-                    <p>Price</p>
+                    <p class="shop_item_title">Name</p>
+                    <p class="shop_item_description">Catogory</p>
+                    <p class="shop_item_price">Price</p>
                 </div>
                 <div class="shop_item">
                     <img class="shop_item_img" src="./img/site/hero.jpg" alt="test">
-                    <p>Name</p>
-                    <p>Catogory</p>
-                    <p>Price</p>
+                    <p class="shop_item_title">Name</p>
+                    <p class="shop_item_description">Catogory</p>
+                    <p class="shop_item_price">Price</p>
                 </div>
                 <div class="shop_item">
                     <img class="shop_item_img" src="./img/site/hero.jpg" alt="test">
-                    <p>Name</p>
-                    <p>Catogory</p>
-                    <p>Price</p>
+                    <p class="shop_item_title">Name</p>
+                    <p class="shop_item_description">Catogory</p>
+                    <p class="shop_item_price">Price</p>
                 </div>
             </div>
         </div>
