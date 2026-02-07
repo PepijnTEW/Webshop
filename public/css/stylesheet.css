@@ -28,6 +28,7 @@ body {
     padding: 0.7rem 1rem 0.7rem 1rem;
     display: block;
     text-decoration: none;
+    transition: background-color 0.3s ease;
 }
 .button:hover {
     background-color: #d5d5d5;
@@ -63,9 +64,21 @@ body {
 .nav_item {
     color: #ffffff;
     text-decoration: none;
+    position: relative;
 }
-.nav_item:hover {
-    text-decoration: underline;
+.nav_item::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    transform: scaleX(0);
+    background: #ffffff;
+    transition: transform 0.3s ease;
+}
+a:hover::after {
+    transform: scaleX(100%);
 }
 #logo {
     max-height: 50px;

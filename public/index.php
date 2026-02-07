@@ -3,13 +3,14 @@ include "./includes/header.php";
 include "./includes/nav.php";
 ?>
 <main>
+
     <img id="hero_img" src="./img/site/hero.jpg" alt="test">
     <section class="section" id="promotion">
         <div class="content_wrapper" id="promotion_inner">
             <p class="subtitle">subtitle</p>
             <h2 class="title">title</h2>
             <p class="description">description</p>
-            <a class="button" id="collection_button" href="#">Shop</a>
+            <a class="button" id="collection_button" href="./productspage.php?promotion=true">Shop</a>
         </div>
     </section>
     <section class="section" id="soon_available">
@@ -20,7 +21,6 @@ include "./includes/nav.php";
         <div class="content_wrapper" id="soon_available_inner">
             <p class="subtitle">Binnenkort verkijgbaar</p>
             <h2 id="soon_available_title">Collection Name</h2>
-            <a class="button" id="soon_available_button" href="#">Shop</a>
         </div>
     </section>
     <section class="section" id="featured">
