@@ -5,9 +5,15 @@ $params = [];
 $types = "";
 
 if (!empty($_GET["type"])) {
-    $conditions[] = "type = ?";
-    $params[] = $_GET["type"];
-    $types .= "s";
+    //maakt de get request een array als dat nog niet zo is
+    $type_values = is_array($_GET["type"]) ? $_GET["type"] : [$_GET["type"]];
+    $placeholders = implode(',',array_fill(0,count($type_values),'?'));
+    $conditions[] = "type IN ($placeholders)";
+
+    foreach ($type_values as $type_value){
+        $params[] = $type_value;
+        $types .= "s";
+    }
 }
 if (isset($_GET["promotion"])) {
     $conditions[] = "promotion = ?";
