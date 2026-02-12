@@ -2,6 +2,18 @@
 include "./includes/header.php";
 include "./includes/nav.php";
 require_once __DIR__ . "/config/db_products.php";
+
+function isChecked($name, $value = null) {
+    if (!isset($_GET[$name])) {
+        return false;
+    }
+    
+    if (is_array($_GET[$name])) {
+        return in_array($value, $_GET[$name]);
+    } else {
+        return $value ? ($_GET[$name] == $value) : true;
+    }
+}
 ?>
 <main>
     <section class="section" id="shop">
@@ -10,15 +22,18 @@ require_once __DIR__ . "/config/db_products.php";
                 <div>
                     <h3>Type</h3>
                     <label for="male1">
-                        <input type="checkbox" id="male1" name="type[]" value="male">
+                        <input type="checkbox" id="male1" name="type[]" value="male"
+                        <?= isChecked('type', 'male') ? 'checked' : '' ?>>
                         <span>Man</span>
                     </label>
                     <label for="female1">
-                        <input type="checkbox" id="female1" name="type[]" value="female">
+                        <input type="checkbox" id="female1" name="type[]" value="female"
+                        <?= isChecked('type', 'female') ? 'checked' : '' ?>>
                         <span>Woman</span>
                     </label>
                     <label for="children1">
-                        <input type="checkbox" id="children1" name="type[]" value="children">
+                        <input type="checkbox" id="children1" name="type[]" value="children"
+                        <?= isChecked('type', 'children') ? 'checked' : '' ?>>
                         <span>Kids</span>
                     </label>
                 </div>

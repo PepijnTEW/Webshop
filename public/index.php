@@ -3,7 +3,6 @@ include "./includes/header.php";
 include "./includes/nav.php";
 ?>
 <main>
-
     <img id="hero_img" src="./img/site/hero.jpg" alt="test">
     <section class="section" id="promotion">
         <div class="content_wrapper" id="promotion_inner">

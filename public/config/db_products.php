@@ -5,7 +5,6 @@ $params = [];
 $types = "";
 
 if (!empty($_GET["type"])) {
-    //maakt de get request een array als dat nog niet zo is
     $type_values = is_array($_GET["type"]) ? $_GET["type"] : [$_GET["type"]];
     $placeholders = implode(',',array_fill(0,count($type_values),'?'));
     $conditions[] = "type IN ($placeholders)";
@@ -15,9 +14,16 @@ if (!empty($_GET["type"])) {
         $types .= "s";
     }
 }
+
 if (isset($_GET["promotion"])) {
     $conditions[] = "promotion = ?";
     $params[] = 1;
+    $types .= "i";
+}
+
+if (isset($_GET["id"])) {
+    $conditions[] = "id = ?";
+    $params[] = (int)$_GET["id"];
     $types .= "i";
 }
 
