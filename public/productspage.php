@@ -1,7 +1,8 @@
 <?php
+require_once __DIR__ . "/config/db_products.php";
+require_once __DIR__ . "/config/init.php";
 include "./includes/header.php";
 include "./includes/nav.php";
-require_once __DIR__ . "/config/db_products.php";
 
 function isChecked($name, $value = null) {
     if (!isset($_GET[$name])) {

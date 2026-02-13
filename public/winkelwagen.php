@@ -1,4 +1,5 @@
 <?php
+require_once __DIR__ . "/config/init.php";
 include "./includes/header.php";
 include "./includes/nav.php";
 ?>
