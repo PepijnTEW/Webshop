@@ -12,15 +12,15 @@ if (isset($_POST['remove_from_cart']) && isset($_POST['remove_item'])) {
 <main>
     <section class="section" id="cart_section">
         <div class="content_wrapper" id="cart_inner">
-                <div id="cart_items">
-                    <?php 
-                    if (empty($cart['items'])){?>
-                        <div id="empty_cart" class="cart_properties">
-                            <p>Je winkelwagen is leeg</p>
-                            <a href="productspage.php" class="button" id="continue_shopping_btn">Verder winkelen</a>
-                        </div>
+            <div id="cart_items">
+                <?php 
+                if (empty($cart['items'])){?>
+                    <div id="empty_cart" class="cart_properties">
+                        <p>Je winkelwagen is leeg</p>
+                        <a href="productspage.php" class="button" id="continue_shopping_btn">Verder winkelen</a>
+                    </div>
                     <?} else {
-                        foreach ($cart['items'] as $item): ?>
+                    foreach ($cart['items'] as $item): ?>
                         <div class="cart_item cart_properties">
                             <img src="<?= $item['image'] ?>">
                             <div class="cart_item_info">
@@ -50,9 +50,8 @@ if (isset($_POST['remove_from_cart']) && isset($_POST['remove_item'])) {
                             ?>
                         </span>
                     </div>
-                    <a href="checkout.php" class="button" id="checkout_btn">Afrekenen</a>
-                    <a href="productspage.php" id="continue_shopping_link">Verder winkelen</a>
-                </div>
+                <a href="checkout.php" class="button" id="checkout_btn">Afrekenen</a>
+            </div>
         </div>
     </section>
 </main>

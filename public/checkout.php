@@ -1,14 +1,17 @@
 <?php
+require_once __DIR__ . "/config/init.php";
+require_once __DIR__ . "/config/checkout_logic.php";
 include "./includes/header.php";
 include "./includes/nav.php";
 ?>
 <main>
     <section class="section" id="checkout">
         <div class="content_wrapper" id="checkout_inner">
-            <form id="checkout_form" action="/verwerk-formulier" method="post">
-                <div>
-                    <div>
-                        <label for="aanhef">Aanhef:</label><br>
+            <form id="checkout_form" action="checkout.php" method="post">
+                
+                <div class="checkout_row">
+                    <div class="checkout_item_container">
+                        <label for="aanhef">Aanhef</label>
                         <select id="aanhef" name="aanhef" required>
                             <option value="">Kies aanhef</option>
                             <option value="dhr">Dhr.</option>
@@ -16,46 +19,50 @@ include "./includes/nav.php";
                             <option value="andere">Anders</option>
                         </select>
                     </div>
-                    <div>
-                        <label for="voornaam">Voornaam:</label><br>
+                    <div class="checkout_item_container">
+                        <label for="voornaam">Voornaam</label>
                         <input type="text" id="voornaam" name="voornaam" required>
                     </div>
-                    <div>
-                        <label for="tussenvoegsel">Tussenvoegsel:</label><br>
+                    <div class="checkout_item_container">
+                        <label for="tussenvoegsel">Tussenvoegsel</label>
                         <input type="text" id="tussenvoegsel" name="tussenvoegsel" placeholder="bijv. van der">
                     </div>
-                    <div>
-                        <label for="achternaam">Achternaam:</label><br>
+                    <div class="checkout_item_container">
+                        <label for="achternaam">Achternaam</label>
                         <input type="text" id="achternaam" name="achternaam" required>
                     </div>
-                    <div>
-                        <label for="email">E-mailadres:</label><br>
+                </div>
+
+                <div class="checkout_row">
+                    <div class="checkout_item_container">
+                        <label for="email">E-mailadres</label>
                         <input type="email" id="email" name="email" required>
                     </div>
-                    <div>
-                        <label for="telefoon">Telefoonnummer:</label><br>
+                    <div class="checkout_item_container">
+                        <label for="telefoon">Telefoonnummer</label>
                         <input type="tel" id="telefoon" name="telefoon" required>
                     </div>
-                    <div>
-                        <label for="geboortedatum">Geboortedatum:</label><br>
+                    <div class="checkout_item_container">
+                        <label for="geboortedatum">Geboortedatum</label>
                         <input type="date" id="geboortedatum" name="geboortedatum" required>
                     </div>
                 </div>
-                <div>
-                    <div>
-                        <label for="straatnaam">Straatnaam:</label><br>
+
+                <div class="checkout_row">
+                    <div class="checkout_item_container">
+                        <label for="straatnaam">Straatnaam</label>
                         <input type="text" id="straatnaam" name="straatnaam" required>
                     </div>
-                    <div>
-                        <label for="huisnummer">Huisnummer:</label><br>
+                    <div class="checkout_item_container">
+                        <label for="huisnummer">Huisnummer</label>
                         <input type="text" id="huisnummer" name="huisnummer" required>
                     </div>
-                    <div>
-                        <label for="postcode">Postcode:</label><br>
+                    <div class="checkout_item_container">
+                        <label for="postcode">Postcode</label>
                         <input type="text" id="postcode" name="postcode" placeholder="1234AB" required>
                     </div>
-                    <div>
-                        <label for="land">Land:</label><br>
+                    <div class="checkout_item_container">
+                        <label for="land">Land</label>
                         <select id="land" name="land" required>
                             <option value="">Kies land</option>
                             <option value="NL">Nederland</option>
@@ -64,14 +71,18 @@ include "./includes/nav.php";
                             <option value="FR">Frankrijk</option>
                         </select>
                     </div>
-                    <div>
+                </div>
+
+                <div class="checkout_row">
+                    <div class="checkout_item_container checkbox_container">
                         <input type="checkbox" id="voorwaarden" name="voorwaarden" required>
                         <label for="voorwaarden">Ik ga akkoord met de algemene voorwaarden</label>
                     </div>
-                    <div>
+                    <div class="checkout_item_container">
                         <button class="button" type="submit">Versturen</button>
                     </div>
                 </div>
+
             </form>
         </div>
     </section>
