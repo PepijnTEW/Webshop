@@ -6,6 +6,6 @@
             <li><a class="nav_item" href="./productspage.php?type=female">Woman</a></li>
             <li><a class="nav_item" href="./productspage.php?type=children">Kids</a></li>
         </ul>
-        <a class="nav_item" href="./winkelwagen.php">Winkelwagen</a>
+        <a class="nav_item" href="./cart.php">Winkelwagen</a>
     </div>
 </nav>

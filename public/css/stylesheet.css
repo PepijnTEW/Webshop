@@ -269,8 +269,29 @@ img {
 }
 #cart_summary {
     flex: 0 0 300px;
+    display: flex;
+    flex-direction: column;
     height: 76vh;
-    width: 300px;
+    width: 20vw;
     background-color: #1e1817;
     padding: 2rem;
+    gap: 10px;
+}
+.cart_properties {
+    width: 60vw;
+}
+.cart_item {
+    padding: 2rem;
+    display: flex;
+    justify-content: space-between;
+}
+.cart_item > img {
+    width: 17rem;
+    height: 17rem;
+    display: block;
+}
+.cart_item_info {
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
 }

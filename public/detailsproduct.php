@@ -1,18 +1,39 @@
 <?php
+require_once __DIR__ . "/config/init.php";
+require_once __DIR__ . "/config/cart_logic.php";
+require_once __DIR__ . "/config/db_products.php";
 include "./includes/header.php";
 include "./includes/nav.php";
-require_once __DIR__ . "/config/db_products.php";
+$productId = $_GET['id'];
 $row = $result->fetch_assoc();
-?>
+
+if (isset($_GET['size']) && isset($_GET['id'])){
+    $selectedSize = $_GET['size'];
+    $quantity = 1;
+
+    addToCart(
+        $productId,
+        $selectedSize,
+        $quantity,
+        [
+            'name' => $row['name'],
+            'price' => $row['price'],
+            'image' => $row['img']
+        ]
+    );
+    header("Location: detailsproduct.php?id=" . $productId);
+    exit;
+}?>
 <main>
     <section class="section" id="product">
         <div class="content_wrapper" id="product_inner">
-            <img id="product_item_img" src="<?= htmlspecialchars($row["img"]) ?>" alt="test">
+            <img id="product_item_img" src="<?= htmlspecialchars($row['img']) ?>" alt="test">
             <div id="product_info">
-                <p id="product_item_title"><?= htmlspecialchars($row["name"]) ?></p>
-                <p id="product_item_description"><?= htmlspecialchars($row["description"]) ?></p>
-                <p id="product_item_price">Price: <?= htmlspecialchars($row["price"]) ?></p>
+                <p id="product_item_title"><?= htmlspecialchars($row['name']) ?></p>
+                <p id="product_item_description"><?= htmlspecialchars($row['description']) ?></p>
+                <p id="product_item_price">Price: <?= htmlspecialchars($row['price']) ?></p>
                 <form id="product_item_form" action="detailsproduct.php" method="get">
+                    <input type="hidden" name="id" value=<?= htmlspecialchars($productId)?>>
                     <p>Size</p>
                     <div>
                         <label for="xs">

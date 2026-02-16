@@ -26,7 +26,7 @@ function getCart(){
         $subtotal = $item['price'] * $item['quantity'];
         $total += $subtotal;
 
-        $items = [
+        $items[] = [
             'cart_key' => $key,
             'id' => $item['id'],
             'name' => $item['name'],
@@ -36,16 +36,15 @@ function getCart(){
             'subtotal' => $subtotal,
             'image' => $item['image']
         ];
-
-        return [
+    }
+    return [
             'items' => $items,
             'total' => $total,
             'count' => array_sum(array_column($cart, 'quantity'))
-        ]
-    }
+    ];
 }
 
-function removeFromCart(){
+function removeFromCart($cartKey){
 if (isset($_SESSION['cart'][$cartKey])) {
         $_SESSION['cart'][$cartKey]['quantity']--;
         
